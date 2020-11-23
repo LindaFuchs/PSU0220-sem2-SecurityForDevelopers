@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace psu0220_Sem_2_SecurityForDevelopers
+namespace BruteForceAttack
 {
     class Program
     {
         static void Main(string[] args)
         {
-            _ = new ProgramSequence();
+            _ = new AttackSequence();
         }
     }
 }
