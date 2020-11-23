@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace psu0220_Sem_2_SecurityForDevelopers
+namespace LoginApplication
 {
     class LoginLogic
     {
-
         /// <summary>
         /// Checks if username exists
         /// </summary>
@@ -21,8 +20,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
             bool valid = false;
             do
             {
-                if (input == userDetails.User
-                    | input == userDetails.Admin)
+                if (input == userDetails.User | input == userDetails.Admin)
                 {
                     valid = true;
                     Console.WriteLine("Username: \"" + input + "\" selected." + "\n");
@@ -33,12 +31,9 @@ namespace psu0220_Sem_2_SecurityForDevelopers
                     Console.WriteLine("try again." + "\n");
                     input = Console.ReadLine();
                 }
-
             } while (!valid);
-
             return input;
         }
-
 
         /// <summary>
         /// 
@@ -52,7 +47,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
             bool valid = false;
             do
             {
-                if (username == "admin")
+                if (username == userDetails.Admin)
                 {
                     if (input == userDetails.AdminPassword)
                     {
@@ -67,8 +62,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
                         input = Console.ReadLine();
                     }
                 }
-
-                else if (username == "user")
+                else if (username == userDetails.User)
                 {
                     if (input == userDetails.UserPassword)
                     {
@@ -76,17 +70,12 @@ namespace psu0220_Sem_2_SecurityForDevelopers
                         Console.WriteLine("\n" + "####  We're in! ####" + "\n");
                         Console.ReadLine();
                     }
-
-
                     else
                     {
                         Console.WriteLine("Attempted \"" + input + "\", password incorrect.");
                         Console.WriteLine("try again." + "\n");
                         input = Console.ReadLine();
-
-
                     }
-
                 }
             } while (!valid);
         }

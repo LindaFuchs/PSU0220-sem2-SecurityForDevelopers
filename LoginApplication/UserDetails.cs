@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace psu0220_Sem_2_SecurityForDevelopers
+namespace LoginApplication
 {
     class UserDetails
     {
@@ -20,8 +20,9 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         public string UserPassword
         { get; set; }
 
-
-
+        /// <summary>
+        /// constructor
+        /// </summary>
         public UserDetails()
         {
             Admin = "admin";
@@ -29,9 +30,5 @@ namespace psu0220_Sem_2_SecurityForDevelopers
             User = "user";
             UserPassword = "666";
         }
-
-
-
-
     }
 }

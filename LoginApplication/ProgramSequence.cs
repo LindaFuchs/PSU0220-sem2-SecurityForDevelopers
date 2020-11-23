@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace psu0220_Sem_2_SecurityForDevelopers
+namespace LoginApplication
 {
     class ProgramSequence
     {
@@ -23,8 +23,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         /// </summary>
         private static void ProgramStart()
         {
-            string start = "\n" + "Welcome to Linda's Security for Developers Exam - " +
-                "BruteForce Demo!" + "\n\n";
+            string start = "\n" + "Linda's super insecure login application" + "\n\n";
             Console.WriteLine(start);
         }
 
@@ -49,9 +48,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
             bool doLogin;
             do
             {
-                string username = loginLogic.UsernameSelection(userDetails);
-                loginLogic.PasswordInput(userDetails, username);
-
+                loginLogic.PasswordInput(userDetails, loginLogic.UsernameSelection(userDetails));
                 doLogin = ProgramRedo();
                 Console.WriteLine("\n");
             }
@@ -64,7 +61,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         /// <returns>boolean to indicate if the login main sequence should be rerun.</returns>
         private static bool ProgramRedo()
         {
-            Console.WriteLine("type YES to redo" + "\n\n");            
+            Console.WriteLine("type YES to redo" + "\n\n");
             return RedoAnswerParser(Console.ReadLine().ToLower());
         }
 
@@ -79,7 +76,6 @@ namespace psu0220_Sem_2_SecurityForDevelopers
             bool proceed = false;
             do
             {
-
                 if (input == "y" | input == "yes")
                 {
                     result = true;
@@ -94,13 +90,10 @@ namespace psu0220_Sem_2_SecurityForDevelopers
                 {
                     Console.WriteLine("Please enter Y/N.");
                     input = Console.ReadLine();
-                    
                 }
-
             } while (!proceed);
             return result;
         }
-
 
         /// <summary>
         /// closing method, goodbye message

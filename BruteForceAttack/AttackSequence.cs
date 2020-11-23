@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace BruteForceAttack
 {
     class AttackSequence
@@ -14,7 +13,6 @@ namespace BruteForceAttack
         /// </summary>
         public AttackSequence()
         {
-
             AttackStart();
             AttackMainSequence();
             AttackEnd();
@@ -25,10 +23,9 @@ namespace BruteForceAttack
         /// </summary>
         private void AttackStart()
         {
-            string start = "Welcome Linda" + "\n ";
+            string start = "\n" + "Welcome Linda" + "\n\n";
             Console.WriteLine(start);
         }
-
 
         /// <summary>
         /// Main part of the program
@@ -49,7 +46,6 @@ namespace BruteForceAttack
         /// <param name="attackLogic">a reference to an instance of the class containing the attack logic</param>
         private void StartBruteForce(PasswordList passwordList, AttackLogic attackLogic)
         {
-
             bool doingAttack;
             do
             {
@@ -59,19 +55,13 @@ namespace BruteForceAttack
             }
             while (doingAttack);
 
-
-
-            
             bool redo = AttackRedo();
             if (redo)
             {
                 StartBruteForce(passwordList, attackLogic);
             }
-            
-
         }
 
-        // AttackRedo()
         /// <summary>
         /// Method responsible for asking and initiating a re-do of the attack
         /// </summary>
@@ -81,9 +71,7 @@ namespace BruteForceAttack
             Console.WriteLine("Attack finished. Do you want to try again? Y/N");
             return RedoAnswerParser(Console.ReadLine().ToLower());
         }
-        
 
-        // RedoAnswerParser
         /// <summary>
         /// Parses the userinput if the attack should be redone.
         /// </summary>
@@ -95,7 +83,6 @@ namespace BruteForceAttack
             bool proceed = false;
             do
             {
-
                 if (input == "y" | input == "yes")
                 {
                     result = true;
@@ -110,13 +97,10 @@ namespace BruteForceAttack
                 {
                     Console.WriteLine("Please enter Y/N.");
                     input = Console.ReadLine();
-
                 }
-
             } while (!proceed);
             return result;
         }
-        
 
         /// <summary>
         /// closing method, goodbye message
