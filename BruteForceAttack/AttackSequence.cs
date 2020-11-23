@@ -50,30 +50,45 @@ namespace BruteForceAttack
         private void StartBruteForce(PasswordList passwordList, AttackLogic attackLogic)
         {
 
-            bool doAttack;
+            bool doingAttack;
             do
             {
                 attackLogic.MainAttackAnswerParser();
                 attackLogic.CountDown();
-                attackLogic.DoAttack();
-                doAttack = AttackRedo();
-                Console.WriteLine("\n");
+                doingAttack = attackLogic.DoAttack(passwordList);
             }
-            while (doAttack);
+            while (doingAttack);
+
+
+
+            
+            bool redo = AttackRedo();
+            if (redo)
+            {
+                StartBruteForce(passwordList, attackLogic);
+            }
+            
+
         }
 
-        
-
-        
-
+        // AttackRedo()
+        /// <summary>
+        /// Method responsible for asking and initiating a re-do of the attack
+        /// </summary>
+        /// <returns>returns true or false, if the attack should be redone</returns>
         private bool AttackRedo()
         {
             Console.WriteLine("Attack finished. Do you want to try again? Y/N");
             return RedoAnswerParser(Console.ReadLine().ToLower());
         }
+        
 
-
-
+        // RedoAnswerParser
+        /// <summary>
+        /// Parses the userinput if the attack should be redone.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>returns true or false depending on if the attack should be redone.</returns>
         private bool RedoAnswerParser(string input)
         {
             bool result = true;
@@ -95,12 +110,13 @@ namespace BruteForceAttack
                 {
                     Console.WriteLine("Please enter Y/N.");
                     input = Console.ReadLine();
-                    
+
                 }
 
             } while (!proceed);
             return result;
         }
+        
 
         /// <summary>
         /// closing method, goodbye message
