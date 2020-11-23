@@ -20,8 +20,9 @@ namespace LoginApplication
         public string UserPassword
         { get; set; }
 
-
-
+        /// <summary>
+        /// constructor
+        /// </summary>
         public UserDetails()
         {
             Admin = "admin";
@@ -29,9 +30,5 @@ namespace LoginApplication
             User = "user";
             UserPassword = "666";
         }
-
-
-
-
     }
 }

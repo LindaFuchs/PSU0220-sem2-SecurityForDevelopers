@@ -8,7 +8,6 @@ namespace LoginApplication
 {
     class LoginLogic
     {
-
         /// <summary>
         /// Checks if username exists
         /// </summary>
@@ -21,8 +20,7 @@ namespace LoginApplication
             bool valid = false;
             do
             {
-                if (input == userDetails.User
-                    | input == userDetails.Admin)
+                if (input == userDetails.User | input == userDetails.Admin)
                 {
                     valid = true;
                     Console.WriteLine("Username: \"" + input + "\" selected." + "\n");
@@ -33,12 +31,9 @@ namespace LoginApplication
                     Console.WriteLine("try again." + "\n");
                     input = Console.ReadLine();
                 }
-
             } while (!valid);
-
             return input;
         }
-
 
         /// <summary>
         /// 
@@ -52,7 +47,7 @@ namespace LoginApplication
             bool valid = false;
             do
             {
-                if (username == "admin")
+                if (username == userDetails.Admin)
                 {
                     if (input == userDetails.AdminPassword)
                     {
@@ -67,8 +62,7 @@ namespace LoginApplication
                         input = Console.ReadLine();
                     }
                 }
-
-                else if (username == "user")
+                else if (username == userDetails.User)
                 {
                     if (input == userDetails.UserPassword)
                     {
@@ -76,17 +70,12 @@ namespace LoginApplication
                         Console.WriteLine("\n" + "####  We're in! ####" + "\n");
                         Console.ReadLine();
                     }
-
-
                     else
                     {
                         Console.WriteLine("Attempted \"" + input + "\", password incorrect.");
                         Console.WriteLine("try again." + "\n");
                         input = Console.ReadLine();
-
-
                     }
-
                 }
             } while (!valid);
         }

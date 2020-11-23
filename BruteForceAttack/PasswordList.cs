@@ -10,6 +10,9 @@ namespace BruteForceAttack
     {
         public string[] passwordList;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public PasswordList()
         {
             passwordList = new string[] {   "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
@@ -17,7 +20,7 @@ namespace BruteForceAttack
                                             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
                                             "fourtytwo", "FOURTYTWO", "42",
                                             "sixhundredandsixtysix", "SIXHUNDREDANDSIXTYSIX", "666",
-                                            "MonkeyBanana", "HeartShapedPear", "AccessDenied" };
+                                            "MonkeyBanana", "HeartShapedPear", "123456" };
         }
     }
 }

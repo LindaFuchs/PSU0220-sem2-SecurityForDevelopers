@@ -23,8 +23,7 @@ namespace LoginApplication
         /// </summary>
         private static void ProgramStart()
         {
-            string start = "\n" + "Welcome to Linda's Security for Developers Exam - " +
-                "BruteForce Demo!" + "\n\n";
+            string start = "\n" + "Linda's super insecure login application" + "\n\n";
             Console.WriteLine(start);
         }
 
@@ -49,9 +48,7 @@ namespace LoginApplication
             bool doLogin;
             do
             {
-                string username = loginLogic.UsernameSelection(userDetails);
-                loginLogic.PasswordInput(userDetails, username);
-
+                loginLogic.PasswordInput(userDetails, loginLogic.UsernameSelection(userDetails));
                 doLogin = ProgramRedo();
                 Console.WriteLine("\n");
             }
@@ -64,7 +61,7 @@ namespace LoginApplication
         /// <returns>boolean to indicate if the login main sequence should be rerun.</returns>
         private static bool ProgramRedo()
         {
-            Console.WriteLine("type YES to redo" + "\n\n");            
+            Console.WriteLine("type YES to redo" + "\n\n");
             return RedoAnswerParser(Console.ReadLine().ToLower());
         }
 
@@ -79,7 +76,6 @@ namespace LoginApplication
             bool proceed = false;
             do
             {
-
                 if (input == "y" | input == "yes")
                 {
                     result = true;
@@ -94,13 +90,10 @@ namespace LoginApplication
                 {
                     Console.WriteLine("Please enter Y/N.");
                     input = Console.ReadLine();
-                    
                 }
-
             } while (!proceed);
             return result;
         }
-
 
         /// <summary>
         /// closing method, goodbye message
