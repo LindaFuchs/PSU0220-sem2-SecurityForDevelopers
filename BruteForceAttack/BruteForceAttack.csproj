@@ -76,6 +76,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttackLogic.cs" />
     <Compile Include="AttackSequence.cs" />
     <Compile Include="PasswordList.cs" />
     <Compile Include="Program.cs" />

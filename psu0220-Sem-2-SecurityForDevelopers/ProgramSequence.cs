@@ -9,7 +9,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
     class ProgramSequence
     {
         /// <summary>
-        /// constructor to run the sequence
+        /// constructor
         /// </summary>
         public ProgramSequence()
         {
@@ -40,7 +40,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         }
 
         /// <summary>
-        /// Main logging in sequence
+        /// Main log-in sequence
         /// </summary>
         /// <param name="userDetails">the instance of the userDetails class</param>
         /// <param name="loginLogic">the instance of the LoginLogic class</param>
@@ -64,10 +64,8 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         /// <returns>boolean to indicate if the login main sequence should be rerun.</returns>
         private static bool ProgramRedo()
         {
-            Console.WriteLine("type YES to redo" + "\n\n");
-            string input = (Console.ReadLine().ToLower());
-            bool redo = RedoAnswerParser(input);
-            return redo;
+            Console.WriteLine("type YES to redo" + "\n\n");            
+            return RedoAnswerParser(Console.ReadLine().ToLower());
         }
 
         /// <summary>
@@ -78,7 +76,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         private static bool RedoAnswerParser(string input)
         {
             bool result = true;
-            bool proceed;
+            bool proceed = false;
             do
             {
 
@@ -96,7 +94,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
                 {
                     Console.WriteLine("Please enter Y/N.");
                     input = Console.ReadLine();
-                    proceed = false;
+                    
                 }
 
             } while (!proceed);
@@ -104,9 +102,8 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         }
 
 
-
         /// <summary>
-        /// closing method, by message
+        /// closing method, goodbye message
         /// </summary>
         private static void End()
         {

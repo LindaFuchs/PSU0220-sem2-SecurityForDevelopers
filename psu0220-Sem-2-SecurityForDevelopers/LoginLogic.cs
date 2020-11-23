@@ -8,6 +8,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
 {
     class LoginLogic
     {
+
         /// <summary>
         /// Checks if username exists
         /// </summary>
