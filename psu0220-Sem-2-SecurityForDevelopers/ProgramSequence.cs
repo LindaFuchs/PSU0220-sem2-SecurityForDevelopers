@@ -37,7 +37,6 @@ namespace psu0220_Sem_2_SecurityForDevelopers
             UserDetails userDetails = new UserDetails();
             LoginLogic loginLogic = new LoginLogic();
             LoginSequence(userDetails, loginLogic);
-
         }
 
         /// <summary>
@@ -52,6 +51,7 @@ namespace psu0220_Sem_2_SecurityForDevelopers
             {
                 string username = loginLogic.UsernameSelection(userDetails);
                 loginLogic.PasswordInput(userDetails, username);
+
                 doLogin = ProgramRedo();
                 Console.WriteLine("\n");
             }
@@ -65,8 +65,9 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         private static bool ProgramRedo()
         {
             Console.WriteLine("type YES to redo" + "\n\n");
-            string input = Console.ReadLine();
-            return AnswerParser(input);
+            string input = (Console.ReadLine().ToLower());
+            bool redo = RedoAnswerParser(input);
+            return redo;
         }
 
         /// <summary>
@@ -74,19 +75,35 @@ namespace psu0220_Sem_2_SecurityForDevelopers
         /// </summary>
         /// <param name="input">the input string</param>
         /// <returns>true if a variation of yes is given. false if a variation of no is given.</returns>
-        private static bool AnswerParser(string input)
+        private static bool RedoAnswerParser(string input)
         {
-            if (input == "y" | input == "yes" | input == "Y" | input == "YES")
+            bool result = true;
+            bool proceed;
+            do
             {
 
-                return true;
-            }
-            else if (input == "n" | input == "no" | input == "N" | input == "NO")
-            {
-                return false;
-            }
-            return false;
+                if (input == "y" | input == "yes")
+                {
+                    result = true;
+                    proceed = true;
+                }
+                else if (input == "n" | input == "no")
+                {
+                    result = false;
+                    proceed = true;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter Y/N.");
+                    input = Console.ReadLine();
+                    proceed = false;
+                }
+
+            } while (!proceed);
+            return result;
         }
+
+
 
         /// <summary>
         /// closing method, by message
