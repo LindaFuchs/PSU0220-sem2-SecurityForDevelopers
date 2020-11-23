@@ -6,12 +6,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C5920339-3F09-473B-8185-BA76EC1D714D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>psu0220_Sem_2_SecurityForDevelopers</RootNamespace>
-    <AssemblyName>psu0220-Sem-2-SecurityForDevelopers</AssemblyName>
+    <RootNamespace>LoginApplication</RootNamespace>
+    <AssemblyName>LoginApplication</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>D:\LINDA%27S STUFF\Education\OneDrive - Professionshøjskolen UCN\Software Development - Official Handins\2nd Semester\Security For Developers\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
